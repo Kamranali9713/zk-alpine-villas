@@ -1,10 +1,15 @@
 export function WhatsAppButton({ number }) {
   const message = encodeURIComponent(
-    "Hello, I am interested in ZK Alpine Villas. Please provide me with more details about the available properties and payment plan."
+    "Hello, I am interested in ZK Alpine Villas. Please provide me with more details about the available properties and payment plan.",
   );
   return (
     <a
-      href={`https://wa.me/${number}?text=${message}`}
+      // href={`https://wa.me/${number}?text=${message}`}
+      // href={`https://wa.me/${number}?text=${message}`}
+      // href={`https://wa.me/${String(number).replace(/\D/g, "")}?text=${message}`}
+      href={`https://wa.me/${String(number).replace(/\D/g, "")}?text=${encodeURIComponent(
+        "Hello, I am interested in ZK Alpine Villas. Please provide me with more details about the available properties and payment plan.",
+      )}`}
       target="_blank"
       aria-label="Chat on WhatsApp"
       className="fixed bottom-24 md:bottom-8 right-5 z-40 w-14 h-14 rounded-full bg-[#25D366] text-white flex items-center justify-center shadow-lg hover:scale-105 transition-transform"

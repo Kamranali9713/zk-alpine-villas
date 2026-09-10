@@ -64,7 +64,8 @@ export function Hero({ settings }) {
               Book Your Property
             </a>
             <a
-              href={`https://wa.me/${settings.whatsapp_number}`}
+              // href={`https://wa.me/${settings.whatsapp_number}`}
+              href={`https://wa.me/${String(settings.whatsapp_number).replace(/\D/g, "")}?text=${encodeURIComponent("Hello, I am interested in ZK Alpine Villas. Please provide me with more details.")}`}
               target="_blank"
               className="rounded-sm border border-cloud/40 px-6 py-3 text-sm text-cloud hover:bg-cloud/10 transition-colors"
             >

@@ -23,38 +23,55 @@ export function InquiryForm({ settings }) {
       return;
     }
     setStatus("done");
-    setForm({ full_name: "", phone: "", email: "", property_type: "Villa", message: "" });
+    setForm({
+      full_name: "",
+      phone: "",
+      email: "",
+      property_type: "Villa",
+      message: "",
+    });
   }
 
   return (
     <section id="inquiry" className="py-24 bg-stone">
       <div className="section-shell grid md:grid-cols-2 gap-14">
         <div>
-          <p className="text-brass text-sm tracking-wide mb-3">Book / Inquire</p>
+          <p className="text-brass text-sm tracking-wide mb-3">
+            Book / Inquire
+          </p>
           <h2 className="font-display text-3xl md:text-4xl text-ink mb-6 leading-tight">
             Tell us what you&apos;re looking for
           </h2>
           <p className="text-slate leading-relaxed mb-8 max-w-md">
-            Share a few details and our sales team will get back to you with availability and
-            pricing, or reach out directly.
+            Share a few details and our sales team will get back to you with
+            availability and pricing, or reach out directly.
           </p>
           <div className="flex flex-col gap-3">
             <a
-              href={`https://wa.me/${settings.whatsapp_number}?text=${encodeURIComponent(
-                "Hello, I am interested in ZK Alpine Villas. Please provide me with more details about the available properties and payment plan."
+              // href={`https://wa.me/${settings.whatsapp_number}?text=${encodeURIComponent(
+              //   "Hello, I am interested in ZK Alpine Villas. Please provide me with more details about the available properties and payment plan."
+              // )}`}
+              href={`https://wa.me/${String(settings.whatsapp_number).replace(/\D/g, "")}?text=${encodeURIComponent(
+                "Hello, I am interested in ZK Alpine Villas. Please provide me with more details about the available properties and payment plan.",
               )}`}
               target="_blank"
               className="inline-flex w-fit rounded-sm bg-pine text-cloud px-6 py-3 text-sm hover:bg-pineLight transition-colors"
             >
               Message on WhatsApp
             </a>
-            <a href={`tel:${settings.contact_phone_1}`} className="inline-flex w-fit rounded-sm border border-ink/20 px-6 py-3 text-sm text-ink hover:border-pine hover:text-pine transition-colors">
+            <a
+              href={`tel:${settings.contact_phone_1}`}
+              className="inline-flex w-fit rounded-sm border border-ink/20 px-6 py-3 text-sm text-ink hover:border-pine hover:text-pine transition-colors"
+            >
               Call {settings.contact_phone_1}
             </a>
           </div>
         </div>
 
-        <form onSubmit={handleSubmit} className="bg-cloud border border-ink/10 rounded-sm p-8 space-y-4">
+        <form
+          onSubmit={handleSubmit}
+          className="bg-cloud border border-ink/10 rounded-sm p-8 space-y-4"
+        >
           <div>
             <label className="block text-sm text-slate mb-1.5">Full Name</label>
             <input
@@ -65,7 +82,9 @@ export function InquiryForm({ settings }) {
             />
           </div>
           <div>
-            <label className="block text-sm text-slate mb-1.5">Phone Number</label>
+            <label className="block text-sm text-slate mb-1.5">
+              Phone Number
+            </label>
             <input
               required
               value={form.phone}
@@ -83,10 +102,14 @@ export function InquiryForm({ settings }) {
             />
           </div>
           <div>
-            <label className="block text-sm text-slate mb-1.5">Property Type</label>
+            <label className="block text-sm text-slate mb-1.5">
+              Property Type
+            </label>
             <select
               value={form.property_type}
-              onChange={(e) => setForm({ ...form, property_type: e.target.value })}
+              onChange={(e) =>
+                setForm({ ...form, property_type: e.target.value })
+              }
               className="w-full border border-ink/15 rounded-sm px-4 py-2.5 bg-cloud focus:outline-none focus:border-pine"
             >
               <option>Villa</option>
@@ -111,10 +134,14 @@ export function InquiryForm({ settings }) {
           </button>
 
           {status === "done" && (
-            <p className="text-sm text-pine">Thanks — we received your inquiry and will contact you soon.</p>
+            <p className="text-sm text-pine">
+              Thanks — we received your inquiry and will contact you soon.
+            </p>
           )}
           {status === "error" && (
-            <p className="text-sm text-clay">Something went wrong. Please try WhatsApp or call instead.</p>
+            <p className="text-sm text-clay">
+              Something went wrong. Please try WhatsApp or call instead.
+            </p>
           )}
         </form>
       </div>
