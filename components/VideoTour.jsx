@@ -22,10 +22,15 @@ export function VideoTour({ url }) {
         <div className="relative aspect-video rounded-sm overflow-hidden bg-ink">
           {playing ? (
             video.type === "file" ? (
-              <video className="w-full h-full" src={video.src} controls autoPlay />
+              <video className="w-full h-full" 
+              src={video.src} 
+              controls 
+              playsInline 
+              />
             ) : (
               <iframe
                 className="w-full h-full"
+                // src={`${video.src}&autoplay=1`}
                 src={`${video.src}&autoplay=1`}
                 allow="autoplay; encrypted-media; fullscreen"
                 allowFullScreen

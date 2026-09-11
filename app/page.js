@@ -106,6 +106,7 @@ import { ContactSection } from "@/components/ContactSection";
 import { Footer } from "@/components/Footer";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { MobileContactBar } from "@/components/MobileContactBar";
+import { BuilderSection } from "@/components/BuilderSection";
 
 export const revalidate = 0;
 
@@ -119,6 +120,7 @@ export default async function Home() {
     { data: gallery },
     { data: faqs },
     { data: socialLinks },
+     { data: builders },
   ] = await Promise.all([
     supabase.from("site_settings").select("*").eq("id", 1).maybeSingle(),
     supabase.from("properties").select("*").eq("is_active", true).order("sort_order"),
@@ -126,6 +128,12 @@ export default async function Home() {
     supabase.from("gallery").select("*").order("sort_order"),
     supabase.from("faqs").select("*").order("sort_order"),
     supabase.from("social_links").select("*").order("sort_order"),
+     supabase
+    .from("builders")
+    .select("*")
+    .eq("is_active", true)
+    .order("sort_order")
+    .order("created_at"),
   ]);
 
   const settings = settingsRow ?? DEFAULT_SETTINGS;
@@ -161,6 +169,7 @@ export default async function Home() {
         <PaymentPlan settings={settings} />
         <WhyChooseUs />
         <CeoSection settings={settings} />
+        <BuilderSection builders={builders ?? []} />
         <Gallery items={gallery ?? []} />
         <NocSection settings={settings} />
         <LocationSection settings={settings} />

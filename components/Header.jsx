@@ -8,6 +8,7 @@ const LINKS = [
   { href: "#farmhouses", label: "Farmhouses" },
   { href: "#facilities", label: "Facilities" },
   { href: "#payment-plan", label: "Payment Plan" },
+  { href: "#builders", label: "Builders" },
   { href: "#gallery", label: "Gallery" },
   { href: "#location", label: "Location" },
   { href: "#contact", label: "Contact" },

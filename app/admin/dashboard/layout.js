@@ -77,9 +77,11 @@ const NAV = [
   { href: "/admin/dashboard/farmhouses", label: "Farmhouses" },
   { href: "/admin/dashboard/facilities", label: "Facilities" },
   { href: "/admin/dashboard/gallery", label: "Gallery" },
+  { href: "/admin/dashboard/builders", label: "Builders" },
   { href: "/admin/dashboard/faqs", label: "FAQs" },
   { href: "/admin/dashboard/inquiries", label: "Inquiries" },
   { href: "/admin/dashboard/settings", label: "Site Settings" },
+  
 ];
 
 export default function DashboardLayout({ children }) {
