@@ -5,7 +5,7 @@ export function NocSection({ settings }) {
     <section className="py-20 bg-cloud">
       <div className="section-shell">
         <div className="border border-ink/10 rounded-sm p-10 md:p-14 grid md:grid-cols-[1fr_auto] gap-8 items-center">
-          <div>
+          {/* <div>
             <p className="text-brass text-sm tracking-wide mb-3">Documentation</p>
             <h2 className="font-display text-2xl md:text-3xl text-ink mb-3 leading-tight">
               NOC approved, transparently documented
@@ -14,7 +14,22 @@ export function NocSection({ settings }) {
               All official approvals and project documents are supplied and confirmed by the
               developer before publishing. Copies are available to serious buyers on request.
             </p>
+          </div> */}
+          <div>
+            <p className="text-brass text-sm tracking-wide mb-3">
+              Documentation
+            </p>
+            <h2 className="font-display text-2xl md:text-3xl text-ink mb-3 leading-tight">
+              Documentation & NOC status
+            </h2>
+            <p className="text-slate leading-relaxed max-w-xl">
+              The project’s NOC is currently under process with the Quetta
+              Development Authority (QDA). Relevant project documentation is
+              available from the developer, and copies can be provided to
+              serious buyers on request.
+            </p>
           </div>
+
           {settings.noc_document_url ? (
             <a
               href={settings.noc_document_url}

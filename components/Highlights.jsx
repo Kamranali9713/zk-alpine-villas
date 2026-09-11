@@ -1,7 +1,13 @@
 import { Icon } from "./Icon";
 
 const ITEMS = [
-  { icon: "shield", title: "NOC Approved", desc: "Verified, legally cleared development." },
+  // { icon: "shield", title: "NOC Approved", desc: "Verified, legally cleared development." },
+  { 
+  icon: "shield", 
+  title: "NOC Under Process", 
+  desc: "NOC application currently under process with QDA." 
+},
+
   { icon: "check", title: "Immediate Possession", desc: "Move in without long delays." },
   { icon: "sparkle", title: "Easy Installments", desc: "Low advance, manageable monthly plan." },
   { icon: "tree", title: "Modern Facilities", desc: "Utilities and amenities, built in." },

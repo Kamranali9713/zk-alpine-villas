@@ -11,21 +11,25 @@ export function About() {
           />
         </div>
         <div>
-          <p className="text-brass text-sm tracking-wide mb-3">About the project</p>
+          <p className="text-brass text-sm tracking-wide mb-3">
+            About the project
+          </p>
           <h2 className="font-display text-3xl md:text-4xl text-ink mb-6 leading-tight">
-            A residential community on Nohisar Road, built for how families actually live
+            A residential community on Nohisar Road, built for how families
+            actually live
           </h2>
           <div className="space-y-4 text-slate leading-relaxed">
             <p>
-              ZK Alpine Villas sits on Nohisar Road in Quetta, offering both villa and farmhouse
-              plots within a single, NOC-approved development. The project is planned around
-              everyday needs — reliable utilities, security, and green open space — rather than
-              just the sale of land.
+              ZK Alpine Villas sits on Nohisar Road in Quetta, offering both
+              villa and farmhouse plots within a single community. The project
+              is planned around everyday needs — reliable utilities, security,
+              and green open spaces — rather than just the sale of land.
             </p>
             <p>
-              Whether you&apos;re looking for a permanent family home or a farmhouse retreat close
-              to the city, ZK Alpine Villas is designed to give you both a place to live and a
-              long-term investment, with a payment plan built to be accessible from day one.
+              Whether you&apos;re looking for a permanent family home or a
+              farmhouse retreat close to the city, ZK Alpine Villas is designed
+              to give you both a place to live and a long-term investment, with
+              a payment plan built to be accessible from day one.
             </p>
           </div>
           <div className="mt-8 flex gap-10">
@@ -38,8 +42,13 @@ export function About() {
               <div className="text-sm text-slate">Core facilities</div>
             </div>
             <div>
-              <div className="font-display text-3xl text-pine">100%</div>
-              <div className="text-sm text-slate">NOC approved</div>
+              <div className="font-display text-3xl text-pine">In Process</div>
+              <div className="text-sm text-slate">
+                NOC under process with QDA
+              </div>
+
+              {/* <div className="font-display text-3xl text-pine">100%</div>
+              <div className="text-sm text-slate">NOC approved</div> */}
             </div>
           </div>
         </div>
